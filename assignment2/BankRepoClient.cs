@@ -65,6 +65,9 @@ namespace assignment2{
                     Console.WriteLine(i.TransactionId + " " + i.TransactionDate + " " + i.TransactionType + " " + i.Ammount + " " + i.AcountNumber);
                 }
             }
+            else if(value == 7){
+                return ;
+            }
 
             // for manual examples
             
