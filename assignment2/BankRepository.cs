@@ -1,7 +1,13 @@
 
 namespace assignment2
 {
-    
+    class AccountNotFoundException : ApplicationException{
+        public AccountNotFoundException(string x):base(x){}
+    }
+
+    class LowAmtToWithdrawException : ApplicationException{
+        public LowAmtToWithdrawException(string x):base(x){}
+    }
 
     class BankRepository : IBankRepository
     {
@@ -33,7 +39,7 @@ namespace assignment2
                 return saveAcc[accno];
             }
             else{
-                throw new NotImplementedException();
+                throw new AccountNotFoundException("No Account found against the entered Account Number");
             }
         }
 
@@ -59,17 +65,22 @@ namespace assignment2
 
         public void WithdrawAmount(int accno, float amt)
         {
-            saveAcc[accno].CuurentBalance -= amt;
+            if(amt > saveAcc[accno].CuurentBalance){
+                throw new LowAmtToWithdrawException("Balance of Your account is lower than Requesed Ammount");
+            }
+            else{
+                saveAcc[accno].CuurentBalance -= amt;
 
-            SBTransaction curTransaction = new SBTransaction();
+                SBTransaction curTransaction = new SBTransaction();
 
-            curTransaction.TransactionId = saveTra[accno].Count + 1;
-            curTransaction.TransactionDate = DateTime.Now;
-            curTransaction.AcountNumber = accno;
-            curTransaction.Ammount = amt;
-            curTransaction.TransactionType = "Withdraw";
+                curTransaction.TransactionId = saveTra[accno].Count + 1;
+                curTransaction.TransactionDate = DateTime.Now;
+                curTransaction.AcountNumber = accno;
+                curTransaction.Ammount = amt;
+                curTransaction.TransactionType = "Withdraw";
 
-            saveTra[accno].Add(curTransaction);
+                saveTra[accno].Add(curTransaction);
+            }
         }
 
 
