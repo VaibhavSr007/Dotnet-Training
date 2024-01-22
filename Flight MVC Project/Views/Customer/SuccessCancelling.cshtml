@@ -1,0 +1,12 @@
+<div class="text-center mt-5">
+    <h1 class="mb-5"> Your Ticket <span style="color: rgb(128, 4, 0);">Cancellation</span> is Successfull!!</h1>
+    <span class="btn btn-primary m-2">
+        <a style="color: white; text-decoration: none" asp-controller="Flight"  asp-action="GetAllFlights">Book a New Ticket</a> 
+    </span>
+    <span class="btn btn-primary m-2">
+        @Html.ActionLink("Your Bookings", "AllBookings", "Customer", new {  CustomerId = ViewBag.cid  }, new Dictionary<string,object> {{"style", "color: white; text-decoration: none;"}})
+    </span>
+    <span class="btn btn-primary m-2">
+        <a style="color: white; text-decoration: none"  asp-controller="Home" asp-action="Index">Home</a>
+    </span>
+</div>

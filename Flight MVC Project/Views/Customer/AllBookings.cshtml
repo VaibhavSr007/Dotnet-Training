@@ -1,0 +1,83 @@
+@model IEnumerable<flightProject.Models.VsBookingDetail>
+
+@{
+    ViewData["Title"] = "AllBookings";
+}
+
+<h1>Your Bookings</h1>
+
+<p class="btn btn-primary">
+    <a style="color: white; text-decoration: none" asp-controller="Flight" asp-action="SearchFlight">Book New Ticket</a> @* here add the book new flight data *@
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.FlightName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TravelDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Src)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Dest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfPassengers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.FlightName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TravelDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.Src)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.Dest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfPassengers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            
+            <td>
+                @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                <span class="btn btn-primary">
+                @Html.ActionLink("Details", "BookingDetails", new {  bkid=item.BookingId  }, new Dictionary<string,object> {{"style", "color: white; text-decoration: none;"}})
+                    </span>
+                 <span class="btn btn-primary"> 
+                @Html.ActionLink("Cancel Ticket", "DeleteBooking", new {  id = item.BookingId}, new Dictionary<string,object> {{"style", "color: white; text-decoration: none;"}})
+                    </span>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

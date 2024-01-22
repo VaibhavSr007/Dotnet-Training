@@ -1,0 +1,59 @@
+@model IEnumerable<flightProject.Models.VsFlight>
+
+@{
+    ViewData["Title"] = "GetAllFlights";
+}
+
+<h1 class="text-center">All Flights Available to Book from <span style="color: darkred;">@ViewBag.Sourcevs</span> to  <span style="color: darkred;">@ViewBag.Destinationvs </span></h1>
+
+
+<table class="table mt-5" >
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Src)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Src)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) | *@
+                <span class="btn btn-primary">
+                @Html.ActionLink("Book Flight", "BookFlight", new {  flightid = item.FlightId }, new Dictionary<string,object> {{"style", "color: white; text-decoration: none;"}})
+                    </span>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

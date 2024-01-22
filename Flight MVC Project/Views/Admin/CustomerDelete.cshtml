@@ -1,0 +1,49 @@
+@model flightProject.Models.VsCustomer
+
+@{
+    ViewData["Title"] = "CustomerDelete";
+}
+
+<h1 class="text-center" style=" margin-top: 30px">Remove Customer</h1>
+
+<h3 class="text-center">Are you sure you want to Remove this Customer?</h3>
+    <hr />
+<div style="margin-left: 40%;">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerPass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CustomerPass)
+        </dd>
+        @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfirmPass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ConfirmPass)
+        </dd> *@
+    </dl>
+    
+    <form style="margin-top: 20px; margin-left: 20px; margin-bottom: 20px"  asp-action="CustomerDelete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> ||
+        <a asp-action="GetAllCustomers">Back to List</a>
+    </form>
+</div>
