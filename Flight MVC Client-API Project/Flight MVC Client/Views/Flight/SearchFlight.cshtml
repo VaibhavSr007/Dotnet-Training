@@ -1,0 +1,48 @@
+@model flightProject.Models.VsSearch
+
+@{
+    ViewData["Title"] = "SearchFlight";
+}
+
+<h1 class="text-center" style=" margin-top: 30px">Search Flight</h1>
+<h3 class="text-center" >Kindly Provide the Source and Destination</h3>
+
+<hr />
+<div class="row mt-5" style="margin-left: 40%;">
+    <div class="col-md-4">
+        <form asp-action="SearchFlight">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="SearchId" class="control-label"></label>
+                <input asp-for="SearchId" class="form-control" />
+                <span asp-validation-for="SearchId" class="text-danger"></span>
+            </div> *@
+            
+            <div class="form-group">
+                <label asp-for="SearchSrc" class="control-label"></label>
+                @* <input asp-for="SearchSrc" class="form-control" /> *@
+                <select class="dropdown" style="color:black;padding-bottom: 5px;padding-top:5px; margin-top:5px;margin-bottom:5px; margin-left:64px;" asp-for="SearchSrc" asp-items="@ViewBag.Flightsources"></select>
+                <span asp-validation-for="SearchSrc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SearchDest" class="control-label"></label>
+                @* <input asp-for="SearchDest" class="form-control" /> *@
+                <select class="dropdown" style="color:black;padding-bottom: 5px;padding-top:5px; margin-top:5px;margin-bottom:5px; margin-left:60px;" asp-for="SearchDest" asp-items="@ViewBag.Flightdestinations"></select>
+                <span asp-validation-for="SearchDest" class="text-danger"></span>
+            </div>
+
+            
+            <div class="form-group" style="margin-top: 20px; margin-left: 70px; margin-bottom: 20px">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="margin-left: 45%;" asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

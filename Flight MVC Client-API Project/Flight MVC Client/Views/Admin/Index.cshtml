@@ -1,0 +1,16 @@
+<div class="text-center">
+    <h1 class="display-4">Hello Admin <span style="color: darkred;">@ViewBag.username</span>, <br> Welcome to CheapOAir</h1>
+    <div style="margin-top: 110px;">
+        <div class="btn btn-primary m-2">
+            @* <a asp-controller="Customer" asp-action="AllBooking">Your Bookings</a> *@
+            <a style="color: white; text-decoration: none" asp-controller="Admin" asp-action="GetAllCustomers">Customer Administration</a>
+            
+        </div>
+        <div class="btn btn-primary m-2">
+            <a style="color: white; text-decoration: none"  asp-controller="Admin" asp-action="GetAllFlights">Flight Administration</a>
+        </div>
+        <div class="btn btn-primary  m-2">
+            <a style="color: white; text-decoration: none"  asp-controller="Home" asp-action="Index">Home</a>
+        </div>
+    </div>
+</div>
