@@ -1,0 +1,55 @@
+@model IEnumerable<flightProject.Models.Customers>
+
+@{
+    ViewData["Title"] = "GetAllCustomers";
+}
+
+<h1>All Customers</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPass)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem =>  item.CustomerPass)
+            </td>
+            
+            <td>
+                @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) | *@
+                <span class="btn btn-primary">
+                @Html.ActionLink("Remove Customer", "CustomerDelete", new {  id=item.CustomerId }, new Dictionary<string,object> {{"style", "color: white; text-decoration: none;"}})
+                    </span>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
