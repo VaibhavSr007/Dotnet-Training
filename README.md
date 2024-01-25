@@ -1,7 +1,7 @@
 
 # Dotnet Training
 
-## Index:
+## Index: (All Projects Introduction)
 
 - **assignment1:** In this project Console App is made using ASP dotnet 8.00. Features include to Accept and Display details for all Employees. GetDetails Calculate Salary and Show details for Permanent Employees and Trainee Employees separately.
 
