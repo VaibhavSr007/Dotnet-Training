@@ -1,0 +1,17 @@
+using firstapi.Models;
+namespace firstapi.Repository
+{
+
+    public interface IFlightServ<VsFlight>
+    {
+        List<VsFlight> GetAllFlights();
+        void AddFlight(VsFlight f);
+        void UpdateFlight(int id, VsFlight f);
+        VsFlight GetFlightById(int id);
+        List<VsFlight> GetFlightsBySrcDest(string s);
+        void DeleteFlight(int id);
+
+        List<string> GetSources();
+        List<string> GetDestinations();
+    }
+}
