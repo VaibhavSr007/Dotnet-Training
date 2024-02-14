@@ -1,0 +1,14 @@
+C:\Users\v.s.va22\Desktop\Training\exceptionex\bin\Debug\net8.0\exceptionex.exe
+C:\Users\v.s.va22\Desktop\Training\exceptionex\bin\Debug\net8.0\exceptionex.deps.json
+C:\Users\v.s.va22\Desktop\Training\exceptionex\bin\Debug\net8.0\exceptionex.runtimeconfig.json
+C:\Users\v.s.va22\Desktop\Training\exceptionex\bin\Debug\net8.0\exceptionex.dll
+C:\Users\v.s.va22\Desktop\Training\exceptionex\bin\Debug\net8.0\exceptionex.pdb
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\exceptionex.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\exceptionex.AssemblyInfoInputs.cache
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\exceptionex.AssemblyInfo.cs
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\exceptionex.csproj.CoreCompileInputs.cache
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\exceptionex.dll
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\refint\exceptionex.dll
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\exceptionex.pdb
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\exceptionex.genruntimeconfig.cache
+C:\Users\v.s.va22\Desktop\Training\exceptionex\obj\Debug\net8.0\ref\exceptionex.dll
