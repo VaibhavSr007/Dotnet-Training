@@ -1,0 +1,53 @@
+@model IEnumerable<firstmvcprj.Models.SbAccountv>
+
+@{
+    ViewData["Title"] = "GetAllAcounts";
+}
+
+<h1>GetAllAcounts</h1>
+
+<p>
+    <a asp-action="AddNewAccount">Add New Account</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentBalance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentBalance)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { accno =item.AccountNumber  }) |
+                @Html.ActionLink("Details", "Details", new {  accno=item.AccountNumber }) |
+                @Html.ActionLink("Delete", "Delete", new {  id = item.AccountNumber })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

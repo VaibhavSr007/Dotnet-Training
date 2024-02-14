@@ -1,0 +1,20 @@
+@* This Page is Created Manually by coder *@
+
+@model IEnumerable<firstmvcprj.Models.Employee> // here IEnumerable is added bcz a list of Employee time is being returned in view not a single Employee
+
+<table class="table">
+    <tr>
+        <th>Eid</th>
+        <th>Ename</th>
+        <th>Salary</th>
+    </tr>
+
+    @foreach(var i in Model){
+        <tr>
+            <td>@i.Eid</td>
+            <td>@i.Ename</td>
+            <td>@i.Salary</td>
+        </tr>
+    }
+</table>
+
